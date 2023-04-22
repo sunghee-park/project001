@@ -2,6 +2,7 @@ package org.example.web;
 import org.example.domain.posts.Posts;
 import org.example.domain.posts.PostsRepository;
 import org.example.web.dto.PostsSaveRequestDto;
+
 import org.example.web.dto.PostsUpdateRequestDto;
 import org.junit.After;
 import org.junit.Test;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
+
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
@@ -18,7 +20,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
-import static org.junit.Assert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -38,7 +41,7 @@ public class PostsApiControllerTest {
         postsRepository.deleteAll();
     }
 
- /*   @Test
+    @Test
     public void Posts_등록된다() throws Exception{
         //given
         String title = "title";
@@ -62,10 +65,10 @@ public class PostsApiControllerTest {
         assertThat(all.get(0).getTitle()).isEqualTo(title);
         assertThat(all.get(0).getContent()).isEqualTo(content);
 
-    }*/
+    }
 
-  /*
-    @Test
+
+/*    @Test
     public void Posts_수정된다() throws Exception{
         //given
         Posts savedPosts = postsRepository.save(Posts.builder()
