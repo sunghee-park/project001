@@ -4,11 +4,15 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.example.domain.BaseTimeEntity;
-import org.springframework.boot.autoconfigure.web.ResourceProperties;
-import org.springframework.web.bind.annotation.GetMapping;
 
-import javax.management.relation.Role;
-import javax.persistence.*;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Getter
 @NoArgsConstructor
@@ -23,7 +27,7 @@ public class User extends BaseTimeEntity {
     private String name;
 
     @Column(nullable = false)
-    private  String email;
+    private String email;
 
     @Column
     private String picture;
@@ -33,22 +37,21 @@ public class User extends BaseTimeEntity {
     private Role role;
 
     @Builder
-    public User(String name, String email, String picture, Role role){
-
+    public User(String name, String email, String picture, Role role) {
         this.name = name;
         this.email = email;
         this.picture = picture;
         this.role = role;
     }
 
-    public User update(String name, String picture){
-        this.name =  name;
+    public User update(String name, String picture) {
+        this.name = name;
         this.picture = picture;
 
         return this;
     }
 
-    public String getRoleKey(){
+    public String getRoleKey() {
         return this.role.getKey();
     }
 }

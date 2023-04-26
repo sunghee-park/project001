@@ -4,14 +4,14 @@ var main = {
         $('#btn-save').on('click', function () {
             _this.save();
         });
-
+/*
         $('#btn-update').on('click', function () {
             _this.update();
         });
 
         $('#btn-delete').on('click', function () {
             _this.delete();
-        });
+        });*/
     },
     save : function () {
         var data = {
@@ -32,7 +32,7 @@ var main = {
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
-    },
+    }/*,
     update : function () {
         var data = {
             title: $('#title').val(),
@@ -69,7 +69,7 @@ var main = {
             alert(JSON.stringify(error));
         });
     }
-
+*/
 };
 
-main.init();
+index.init();

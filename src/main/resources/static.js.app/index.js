@@ -4,7 +4,6 @@ var main = {
         $('#btn-save').on('click', function () {
             _this.save();
         });
-
         $('#btn-update').on('click', function () {
             _this.update();
         });
@@ -69,7 +68,6 @@ var main = {
             alert(JSON.stringify(error));
         });
     }
-
 };
 
-main.init();
+index.init();
