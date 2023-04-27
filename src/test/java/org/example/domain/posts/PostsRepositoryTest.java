@@ -23,7 +23,7 @@ public class PostsRepositoryTest {
     postsRepository.deleteAll();
 }
 
-@Test
+@Tes
     public void 게시글저장_불러오기(){
     //given
     String title = "테스트 게시글";
